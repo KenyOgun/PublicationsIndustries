@@ -1,0 +1,2 @@
+# PublicationsIndustries
+Business Intelligence solution

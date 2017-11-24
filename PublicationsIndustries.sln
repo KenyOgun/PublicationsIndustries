@@ -1,12 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.17
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionDocuments", "SolutionDocuments", "{9A9C4FB5-ECDC-4F42-8F75-1D5F4CF64DC4}"
 	ProjectSection(SolutionItems) = preProject
 		BISolutionPlan.docx = BISolutionPlan.docx
 		BISolutionWorksheets.xlsx = BISolutionWorksheets.xlsx
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DWPubsSales", "DWPubsSales", "{958A337D-A099-4755-B3C3-EA8D7A7B334B}"
+	ProjectSection(SolutionItems) = preProject
+		DWPubsSales\Backing up and restoring the database.sql = DWPubsSales\Backing up and restoring the database.sql
+		DWPubsSales\Create DWPubsSales Script.sql = DWPubsSales\Create DWPubsSales Script.sql
+		DWPubsSales\DWPubsSales_BeforeETL.bak = DWPubsSales\DWPubsSales_BeforeETL.bak
 	EndProjectSection
 EndProject
 Global

@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DWPubsSales", "DWPubsSales"
 EndProject
 Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "DWPubsSalesETL", "DWPubsSalesETL\DWPubsSalesETL.dtproj", "{3253D3E5-28C6-49FE-B459-B497E9E52570}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "PubsBICubes", "PubsBICubes\PubsBICubes.dwproj", "{236540E3-1408-4DB4-9119-46BDCAEA1D5D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -25,6 +27,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3253D3E5-28C6-49FE-B459-B497E9E52570}.Development|Default.ActiveCfg = Development
 		{3253D3E5-28C6-49FE-B459-B497E9E52570}.Development|Default.Build.0 = Development
+		{236540E3-1408-4DB4-9119-46BDCAEA1D5D}.Development|Default.ActiveCfg = Development
+		{236540E3-1408-4DB4-9119-46BDCAEA1D5D}.Development|Default.Build.0 = Development
+		{236540E3-1408-4DB4-9119-46BDCAEA1D5D}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

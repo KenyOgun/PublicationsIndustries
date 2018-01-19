@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ETLProcessForDWPubsSales"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{293BF3BB-B87F-441C-9455-4CB6FBEA0F78}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{8AE785BF-CE2F-4B3B-A3DC-C27E381C4E82}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -90,7 +90,9 @@
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8BDC4D6E-7383-441E-A0F7-56EF4711EB79}"
+              SQLTask:SqlStatementSource="Set Identity_Insert [DWPubsSales].[dbo].[DimDates] On&#xA;Insert Into [DWPubsSales].[dbo].[DimDates] &#xA;  ( [DateKey]&#xA;  , [Date]&#xA;  , [DateName]&#xA;  , [Month]&#xA;  , [MonthName]&#xA;  , [Quarter]&#xA;  , [QuarterName]&#xA;  , [Year], [YearName] )&#xA;  Select &#xA;    [DateKey] = -1&#xA;  , [Date] =  Cast('01/01/1900' as nVarchar(50) )&#xA;  , [DateName] = Cast('Unknown Day' as nVarchar(50) )&#xA;  , [Month] = -1&#xA;  , [MonthName] = Cast('Unknown Month' as nVarchar(50) )&#xA;  , [Quarter] =  -1&#xA;  , [QuarterName] = Cast('Unknown Quarter' as nVarchar(50) )&#xA;  , [Year] = -1&#xA;  , [YearName] = Cast('Unknown Year' as nVarchar(50) )&#xA;  Union&#xA;  Select &#xA;    [DateKey] = -2&#xA;  , [Date] = Cast('01/01/1900' as nVarchar(50) )&#xA;  , [DateName] = Cast('Corrupt Day' as nVarchar(50) )&#xA;  , [Month] = -2&#xA;  , [MonthName] = Cast('Corrupt Month' as nVarchar(50) )&#xA;  , [Quarter] =  -2&#xA;  , [QuarterName] = Cast('Corrupt Quarter' as nVarchar(50) )&#xA;  , [Year] = -2&#xA;  , [YearName] = Cast('Corrupt Year' as nVarchar(50) )&#xA;&#xA;  Set Identity_Insert [DWPubsSales].[dbo].[DimDates] Off&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
@@ -428,7 +430,9 @@ From pubs.dbo.authors</property>
           DTS:ThreadHint="0">
           <DTS:Variables />
           <DTS:ObjectData>
-            <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{8BDC4D6E-7383-441E-A0F7-56EF4711EB79}"
+              SQLTask:SqlStatementSource="-- Create variables to hold the start and end date&#xA;Declare @StartDate datetime = '01/01/1990'&#xA;Declare @EndDate datetime = '01/01/1995' &#xA;&#xA;-- Use a while loop to add dates to the table&#xA;Declare @DateInProcess datetime&#xA;Set @DateInProcess = @StartDate&#xA;&#xA;While @DateInProcess &lt;= @EndDate&#xA; Begin&#xA; -- Add a row into the date dimension table for this date&#xA; Insert Into DimDates &#xA; ( [Date], [DateName], [Month], [MonthName], [Quarter], [QuarterName], [Year], [YearName] )&#xA; Values ( &#xA;  @DateInProcess -- [Date]&#xA;  , DateName( weekday, @DateInProcess )  -- [DateName]  &#xA;  , Month( @DateInProcess ) -- [Month]   &#xA;  , DateName( month, @DateInProcess ) -- [MonthName]&#xA;  , DateName( quarter, @DateInProcess ) -- [Quarter]&#xA;  , 'Q' + DateName( quarter, @DateInProcess ) + ' - ' + Cast( Year(@DateInProcess) as nVarchar(50) ) -- [QuarterName] &#xA;  , Year( @DateInProcess )&#xA;  , Cast( Year(@DateInProcess ) as nVarchar(50) ) -- [YearName] &#xA;  )  &#xA; -- Add a day and loop again&#xA; Set @DateInProcess = DateAdd(d, 1, @DateInProcess)&#xA; End" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

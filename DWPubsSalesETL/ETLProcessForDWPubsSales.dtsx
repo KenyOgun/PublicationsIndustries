@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ETLProcessForDWPubsSales"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{5D31B73E-1DFC-4E1A-B4EB-EEC6CE29EFD2}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{1659E6F2-94E6-48F4-B59C-158F81E61C4F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -92,7 +92,7 @@
           <DTS:ObjectData>
             <SQLTask:SqlTaskData
               SQLTask:Connection="{8BDC4D6E-7383-441E-A0F7-56EF4711EB79}"
-              SQLTask:SqlStatementSource="Alter Table [dbo].[DimTitles] With Check Add Constraint [FK_DimTitles_DimPublishers] &#xA;Foreign Key ([PublisherKey]) References [dbo].[DimPublishers] ([PublisherKey])&#xA;&#xA;Alter Table [dbo].[FactTitlesAuthors] With Check Add Constraint [FK_FactTitlesAuthors_DimAuthors] &#xA;Foreign Key ([AuthorKey]) References [dbo].[DimAuthors] ([AuthorKey])&#xA;&#xA;Alter Table [dbo].[FactTitlesAuthors] With Check Add Constraint [FK_FactTitlesAuthors_DimTitles] &#xA;Foreign Key ([TitleKey]) References [dbo].[DimTitles] ([TitleKey])&#xA;&#xA;Alter Table [dbo].[FactSales] With Check Add Constraint [FK_FactSales_DimStores] &#xA;Foreign Key ([StoreKey]) References [dbo].[DimStores] ([Storekey])&#xA;&#xA;Alter Table [dbo].[FactSales] With Check Add Constraint [FK_FactSales_DimTitles] &#xA;Foreign Key ([TitleKey]) References [dbo].[DimTitles] ([TitleKey])&#xA;&#xA;Alter Table [dbo].[FactSales]  With Check Add Constraint [FK_FactSales_DimDates] &#xA;Foreign Key ([OrderDateKey]) References [dbo].[DimDates] ([DateKey]) &#xA;&#xA;Alter Table [dbo].[DimTitles]  With Check Add Constraint [FK_DimTitles_DimDates] &#xA;Foreign Key ([PublishedDateKey]) References [dbo].[DimDates] ([DateKey]) " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+              SQLTask:SqlStatementSource="Set Identity_Insert [DWPubsSales].[dbo].[DimDates] On&#xA;Insert Into [DWPubsSales].[dbo].[DimDates] &#xA;  ( [DateKey]&#xA;  , [Date]&#xA;  , [DateName]&#xA;  , [Month]&#xA;  , [MonthName]&#xA;  , [Quarter]&#xA;  , [QuarterName]&#xA;  , [Year], [YearName] )&#xA;  Select &#xA;    [DateKey] = -1&#xA;  , [Date] =  Cast('01/01/1900' as nVarchar(50) )&#xA;  , [DateName] = Cast('Unknown Day' as nVarchar(50) )&#xA;  , [Month] = -1&#xA;  , [MonthName] = Cast('Unknown Month' as nVarchar(50) )&#xA;  , [Quarter] =  -1&#xA;  , [QuarterName] = Cast('Unknown Quarter' as nVarchar(50) )&#xA;  , [Year] = -1&#xA;  , [YearName] = Cast('Unknown Year' as nVarchar(50) )&#xA;  Union&#xA;  Select &#xA;    [DateKey] = -2&#xA;  , [Date] = Cast('01/01/1900' as nVarchar(50) )&#xA;  , [DateName] = Cast('Corrupt Day' as nVarchar(50) )&#xA;  , [Month] = -2&#xA;  , [MonthName] = Cast('Corrupt Month' as nVarchar(50) )&#xA;  , [Quarter] =  -2&#xA;  , [QuarterName] = Cast('Corrupt Quarter' as nVarchar(50) )&#xA;  , [Year] = -2&#xA;  , [YearName] = Cast('Corrupt Year' as nVarchar(50) )&#xA;&#xA;  Set Identity_Insert [DWPubsSales].[dbo].[DimDates] Off&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable

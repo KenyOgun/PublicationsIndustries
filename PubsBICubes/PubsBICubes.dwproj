@@ -6,6 +6,12 @@
     <Name>PubsBICubes.database</Name>
     <FullPath>PubsBICubes.database</FullPath>
   </Database>
+  <Dimensions>
+    <ProjectItem>
+      <Name>DimTitles.dim</Name>
+      <FullPath>DimTitles.dim</FullPath>
+    </ProjectItem>
+  </Dimensions>
   <DataSources>
     <ProjectItem>
       <Name>DWPubsSales.ds</Name>

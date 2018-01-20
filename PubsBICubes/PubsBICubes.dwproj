@@ -15,6 +15,10 @@
       <Name>DimAuthors.dim</Name>
       <FullPath>DimAuthors.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>DimStores.dim</Name>
+      <FullPath>DimStores.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

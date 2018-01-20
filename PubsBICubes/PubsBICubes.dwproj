@@ -11,6 +11,10 @@
       <Name>DimTitles.dim</Name>
       <FullPath>DimTitles.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>DimAuthors.dim</Name>
+      <FullPath>DimAuthors.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

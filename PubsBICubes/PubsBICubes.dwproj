@@ -23,6 +23,10 @@
       <Name>DimDates.dim</Name>
       <FullPath>DimDates.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>DimOrders.dim</Name>
+      <FullPath>DimOrders.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>

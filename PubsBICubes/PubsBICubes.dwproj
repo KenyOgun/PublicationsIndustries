@@ -19,6 +19,10 @@
       <Name>DimStores.dim</Name>
       <FullPath>DimStores.dim</FullPath>
     </ProjectItem>
+    <ProjectItem>
+      <Name>DimDates.dim</Name>
+      <FullPath>DimDates.dim</FullPath>
+    </ProjectItem>
   </Dimensions>
   <DataSources>
     <ProjectItem>
